@@ -4,11 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        black1: '#0B0D17',
         teal: '#274B89',
         teal2: '#1B1464',
         gray1: '#18191F',
         gray2: '#515151',
         gray3: '#F4F5F7',
+        gray4: '#D9DBE1',
+        orange1: '#FFEDED',
       },
     },
   },
