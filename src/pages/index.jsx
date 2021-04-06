@@ -118,8 +118,8 @@ const HomePage = () => {
     <div className='HomePage'>
       <header className='h-screen header'>
         <NavBar />
-        <div className='grid lg:grid-cols-2 px-10 lg:px-48 mt-12'>
-          <h2 className='leading-tight text-5xl mb-8 lg:text-7xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
+        <div className='grid lg:grid-cols-2 px-10 xs:px-5 lg:px-48 mt-12'>
+          <h2 className='leading-tight xs:text-3xl md:text-5xl md:leading-tight text-5xl mb-8 lg:text-7xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
             Ultra-modern system of essential team collaboration
           </h2>
           <img src='/images/33333.png' alt='' className='lg:block' />
@@ -127,7 +127,7 @@ const HomePage = () => {
       </header>
 
       <section id='features'>
-        <div className='grid lg:grid-cols-2 px-10 lg:px-48 mt-16 mb-11'>
+        <div className='grid lg:grid-cols-2 xs:px-5 px-10 lg:px-48 mt-16 mb-11'>
           <img src='/images/11111.png' alt='' className='block mx-auto' />
           <div className='features'>
             <h2 className='text-4xl text-gray1 max-w-sm font-bold leading-tight'>
@@ -139,8 +139,11 @@ const HomePage = () => {
             </p>
 
             {features.map((feature, featureIdx) => (
-              <div key={`feature_${featureIdx}`} className='flex mt-16'>
-                <div className='rounded-full h-20 w-20 bg-gray3 flex items-center justify-center'>
+              <div
+                key={`feature_${featureIdx}`}
+                className='lg:flex md:flex xs:grid-cols-1 xs:grid xs:place-items-center mt-16'
+              >
+                <div className='rounded-full h-20 w-20 bg-gray3 xs:mb-5 flex items-center justify-center'>
                   {feature.icon}
                 </div>
                 <div className='flex flex-col ml-4'>
@@ -167,8 +170,8 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className='mt-20 flex flex-col justify-center lg:hidden items-center px-10 mb-11'>
-          <h2 className='text-4xl text-center text-black font-bold pt-12 mb-8 max-w-xl leading-tight'>
+        <div className='mt-20 flex flex-col justify-center lg:hidden items-center xs:px-5 px-10 mb-11'>
+          <h2 className='md:text-4xl xs:text-3xl text-center text-black xs:font-semibold font-bold pt-12 mb-8 max-w-xl leading-tight'>
             Smart jackpots that you may love this anytime & anywhere
           </h2>
           <p className='max-w-xl text-xl text-gray1'>
@@ -177,7 +180,7 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className='grid lg:grid-cols-2 px-14 lg:px-48 md:gap-x-10 mt-44'>
+        <div className='grid lg:grid-cols-2 xs:px-5 xs:mt-28 px-14 lg:px-48 md:gap-x-10 mt-44'>
           <img src='/images/Logos.jpg' alt='' className='block mx-auto' />
           <div className='flex flex-col md:mt-20 lg:mt-28'>
             <h2 className='text-4xl text-gray1 font-bold lg:max-w-sm leading-tight'>
@@ -191,11 +194,11 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className='px-10 lg:px-48 mb-11 mt-32'>
-          <h2 className='text-center font-bold text-4xl max-w-md mx-auto leading-tight text-black'>
+        <div className='px-10 xs:px-5 lg:px-48 mb-11 mt-32'>
+          <h2 className='text-center xs:font-semibold font-bold text-4xl max-w-md mx-auto leading-tight text-black'>
             Why you should choose our app
           </h2>
-          <p className='text-center text-xl text-gray1 max-w-3xl mx-auto mt-5'>
+          <p className='lg:text-center text-xl text-gray1 max-w-3xl mx-auto mt-5'>
             The rise of mobile devices transforms the way we consume information
             entirely and the world's most elevant channels such as Facebook.
           </p>
@@ -223,12 +226,12 @@ const HomePage = () => {
 
       <section
         id='pricing'
-        className='px-10 lg:px-48 mt-32 mb-11 border-b-2 border-gray-200 pb-36'
+        className='px-10 xs:px-5 lg:px-48 mt-32 mb-11 border-b-2 border-gray-200 pb-36'
       >
         <h2 className='text-center font-bold text-4xl text-black'>
           Get the best with premium
         </h2>
-        <p className='text-center text-gray1 text-xl max-w-3xl mx-auto mt-7'>
+        <p className='lg:text-center text-gray1 text-xl max-w-3xl mx-auto mt-7'>
           The rise of mobile devices transforms the way we consume information
           entirely and the world's most elevant channels such as Facebook.
         </p>
@@ -276,7 +279,7 @@ const HomePage = () => {
         className='lg:pr-48 grid lg:grid-cols-2 mt-20 xs:mt-14 lg:mt-32'
       >
         <img src='/images/image 5.jpg' alt='' />
-        <div className='flex flex-col justify-center sm:pl-10 xs:pl-10 md:pl-10'>
+        <div className='flex flex-col justify-center sm:pl-10 xs:pl-5 md:pl-10'>
           <h2 className='font-bold text-4xl text-black leading-tight max-w-md'>
             Meet Client Satisfaction by using our software
           </h2>
@@ -310,16 +313,16 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section id='faq' className='mt-32 max-w-4xl mx-auto mb-11 px-8'>
+      <section id='faq' className='mt-32 max-w-4xl mx-auto mb-11 xs:px-5 px-10'>
         <h2 className='text-center text-4xl font-bold text-black'>
           Frequently asked questions
         </h2>
-        <p className='text-xl text-gray1 text-center my-8 max-w-3xl mx-auto'>
+        <p className='text-xl text-gray1 lg:text-center my-8 max-w-3xl mx-auto'>
           The rise of mobile devices transforms the way we consume information
           entirely and the world's most elevant channels such as Facebook.
         </p>
-        <div className='flex flex-col bg-orange1 py-14 px-10 mt-14'>
-          <h2 className='text-xl font-bold text-black mb-8'>
+        <div className='flex flex-col bg-orange1 py-14 xs:px-5 px-10 mt-14'>
+          <h2 className='text-xl xs:text-lg font-bold text-black mb-8'>
             How to create a workspace?
           </h2>
           <p className='text-base text-gray1 leading-relaxed'>
@@ -335,7 +338,7 @@ const HomePage = () => {
             key={`faqs_${faqIdx}`}
             className='flex justify-between h-14 items-center bg-orange1 mt-5 px-5 lg:px-10 py-10'
           >
-            <h2 className='font-semibold lg:font-bold lg:text-xl text-black'>
+            <h2 className='font-semibold xs:text-base xs:font-medium lg:font-bold lg:text-xl text-black'>
               {faq.text}
             </h2>
             {faq.icon}

@@ -34,7 +34,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className='px-10 flex h-40 justify-between items-center lg:px-48'>
+    <nav className='px-10 xs:px-5 flex h-40 justify-between items-center lg:px-48'>
       <NavLink to='/'>
         <LogoIcon />
       </NavLink>
