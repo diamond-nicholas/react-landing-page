@@ -39,7 +39,7 @@ const NavBar = () => {
       <span className='flex-grow' />
       {isModalOpen === false && (
         <div onClick={() => setIsModalOpen(true)}>
-          <Menu />
+          <Menu className='lg:hidden' />
         </div>
       )}
 
