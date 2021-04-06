@@ -118,17 +118,17 @@ const HomePage = () => {
     <div className='HomePage'>
       <header className='h-screen header'>
         <NavBar />
-        <div className='flex justify-between px-48 mt-12'>
-          <h2 className='text-7xl font-bold text-teal2 max-w-lg leading-tight'>
+        <div className='grid lg:grid-cols-2 px-10 lg:px-48 mt-12'>
+          <h2 className='leading-tight text-5xl mb-8 lg:text-7xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
             Ultra-modern system of essential team collaboration
           </h2>
-          <img src='/images/Macbook.png' alt='' className='hidden lg:block' />
+          <img src='/images/33333.png' alt='' className='lg:block' />
         </div>
       </header>
 
       <section id='features'>
-        <div className='grid grid-cols-2 px-48 mt-16 mb-11'>
-          <img src='/images/11111.png' alt='' />
+        <div className='grid lg:grid-cols-2 px-10 lg:px-48 mt-16 mb-11'>
+          <img src='/images/11111.png' alt='' className='block mx-auto' />
           <div className='features'>
             <h2 className='text-4xl text-gray1 max-w-sm font-bold leading-tight'>
               Awesome App Features
@@ -156,8 +156,8 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className='mt-36 flex justify-between items-center px-48 mb-11'>
-          <h2 className='text-4xl text-black font-bold pr-48 pt-12 leading-tight border-r-2 border-gray-400'>
+        <div className='xs:hidden md:hidden mt-36 flex justify-between items-center px-10 lg:px-48 mb-11'>
+          <h2 className='text-4xl text-black font-bold lg:pr-48 pt-12 leading-tight border-r-2 border-gray-400'>
             Smart jackpots that you <br /> may love this anytime & <br />{' '}
             anywhere
           </h2>
@@ -167,10 +167,20 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-2 px-14 lg:px-48 md:gap-x-10 mt-44'>
-          <img src='/images/Logos.jpg' alt='' />
+        <div className='mt-20 flex flex-col justify-center lg:hidden items-center px-10 mb-11'>
+          <h2 className='text-4xl text-center text-black font-bold pt-12 mb-8 max-w-xl leading-tight'>
+            Smart jackpots that you may love this anytime & anywhere
+          </h2>
+          <p className='max-w-xl text-xl text-gray1'>
+            The rise of mobile devices transforms the way we consume information
+            entirely and the world's most elevant channels such as Facebook.
+          </p>
+        </div>
+
+        <div className='grid lg:grid-cols-2 px-14 lg:px-48 md:gap-x-10 mt-44'>
+          <img src='/images/Logos.jpg' alt='' className='block mx-auto' />
           <div className='flex flex-col md:mt-20 lg:mt-28'>
-            <h2 className='text-4xl text-gray1 font-bold max-w-sm leading-tight'>
+            <h2 className='text-4xl text-gray1 font-bold lg:max-w-sm leading-tight'>
               Designed & built by the latest code integration
             </h2>
             <p className='text-xl text-gray2 mt-5 max-w-lg'>
@@ -181,7 +191,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className='md:px-14 lg:px-48 mb-11 mt-32'>
+        <div className='px-10 lg:px-48 mb-11 mt-32'>
           <h2 className='text-center font-bold text-4xl max-w-md mx-auto leading-tight text-black'>
             Why you should choose our app
           </h2>
@@ -223,7 +233,7 @@ const HomePage = () => {
           entirely and the world's most elevant channels such as Facebook.
         </p>
 
-        <div className='grid md:gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 mt-20 max-w-2xl mx-auto gap-x-16'>
+        <div className='grid gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 mt-20 max-w-2xl mx-auto gap-x-16'>
           {plans.map((plan, planIdx) => (
             <div key={`plan-type_${planIdx}`} className='card w-80 h-full'>
               <div className='card-header py-14 h-auto flex flex-col items-center justify-center'>
@@ -261,9 +271,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <section id='testimonials' className='pr-48 grid grid-cols-2 mt-32'>
+      <section
+        id='testimonials'
+        className='lg:pr-48 grid lg:grid-cols-2 mt-20 xs:mt-14 lg:mt-32'
+      >
         <img src='/images/image 5.jpg' alt='' />
-        <div className='flex flex-col justify-center'>
+        <div className='flex flex-col justify-center sm:pl-10 xs:pl-10 md:pl-10'>
           <h2 className='font-bold text-4xl text-black leading-tight max-w-md'>
             Meet Client Satisfaction by using our software
           </h2>
@@ -320,9 +333,11 @@ const HomePage = () => {
         {FAQs.map((faq, faqIdx) => (
           <div
             key={`faqs_${faqIdx}`}
-            className='flex justify-between h-14 items-center bg-orange1 mt-5 px-10 py-10'
+            className='flex justify-between h-14 items-center bg-orange1 mt-5 px-5 lg:px-10 py-10'
           >
-            <h2 className='font-bold text-xl text-black'>{faq.text}</h2>
+            <h2 className='font-semibold lg:font-bold lg:text-xl text-black'>
+              {faq.text}
+            </h2>
             {faq.icon}
           </div>
         ))}
