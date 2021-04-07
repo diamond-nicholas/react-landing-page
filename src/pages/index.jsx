@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -9,6 +9,7 @@ import Feature2Icon from '../components/vectors/Feature2';
 import Feature3Icon from '../components/vectors/Feature3';
 
 import './Home.scss';
+import MinusIcon from '../components/vectors/MinusIcon';
 
 const features = [
   {
@@ -101,19 +102,34 @@ const plans = [
 const FAQs = [
   {
     icon: <PlusIcon />,
+    icon2: <MinusIcon />,
+    id: 'panel1',
     text: 'App installation failed, how to update system information?',
+    content: '',
   },
   {
     icon: <PlusIcon />,
+    icon2: <MinusIcon />,
+    id: 'panel2',
     text: 'App response taking time, how to improve?',
+    content: '',
   },
   {
     icon: <PlusIcon />,
+    icon2: <MinusIcon />,
+    id: 'panel3',
     text: 'New update fixed all bug and issues',
+    content: '',
   },
 ];
 
 const HomePage = () => {
+  const [expanded, setExpanded] = useState(false);
+
+  const handleChange = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <div className='HomePage'>
       <header className='h-screen header'>
@@ -334,14 +350,26 @@ const HomePage = () => {
           </p>
         </div>
         {FAQs.map((faq, faqIdx) => (
-          <div
-            key={`faqs_${faqIdx}`}
-            className='flex justify-between h-14 items-center bg-orange1 mt-5 px-5 lg:px-10 py-10'
-          >
-            <h2 className='font-semibold xs:text-base xs:font-medium lg:font-bold lg:text-xl text-black'>
-              {faq.text}
-            </h2>
-            {faq.icon}
+          <div>
+            <div
+              onClick={handleChange}
+              key={`faqs_${faqIdx}`}
+              className='flex justify-between h-14 items-center bg-orange1 mt-5 px-5 lg:px-10 py-10 cursor-pointer'
+            >
+              <h2 className='font-semibold xs:text-base xs:font-medium lg:font-bold lg:text-xl text-black'>
+                {faq.text}
+              </h2>
+
+              {expanded === false ? faq.icon : faq.icon2}
+            </div>
+            {expanded && (
+              <div className='h-24 bg-gray-500 px-4 py-5 text-white'>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis rem error eligendi quod quis nihil accusamus incidunt
+                consequatur, cupiditate veniam iusto excepturi perferendis magni
+                in architecto enim repellendus vitae atque.
+              </div>
+            )}
           </div>
         ))}
       </section>
