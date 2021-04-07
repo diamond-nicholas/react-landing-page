@@ -18,15 +18,15 @@ const NavBar = () => {
     },
     {
       text: 'Features',
-      path: '/features',
+      path: '#features',
     },
     {
       text: 'Pricing',
-      path: '/pricing',
+      path: '#pricing',
     },
     {
       text: 'FAQ',
-      path: '/faq',
+      path: '#faq',
     },
   ];
 
@@ -45,14 +45,15 @@ const NavBar = () => {
 
       <div className='links'>
         {links.map((link, linkIndex) => (
-          <NavLink
+          <a
+            href={link.path}
             key={`nav-link_${linkIndex}`}
             to={link.path}
             className='hidden lg:inline-block px-12 mx-1 font-normal text-teal'
             activeClassName='font-bold'
           >
             {link.text}
-          </NavLink>
+          </a>
         ))}
         <button className='hidden lg:inline-block signup'>Sign up</button>
         <button className='hidden lg:inline-block login'>Login</button>

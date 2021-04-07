@@ -1,24 +1,29 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+
 import CloseIcon from '../vectors/CloseIcon';
 
 const NavModal = ({ setIsModalOpen }) => {
+  const handleClick = (pageName) => {
+    setIsModalOpen(false);
+    window.location.href = pageName;
+  };
+
   const links = [
     {
       text: 'Home',
-      path: '/',
+      path: '#home',
     },
     {
       text: 'Features',
-      path: '/features',
+      path: '#features',
     },
     {
       text: 'Pricing',
-      path: '/pricing',
+      path: '#pricing',
     },
     {
       text: 'FAQ',
-      path: '/faq',
+      path: '#faq',
     },
   ];
 
@@ -28,18 +33,25 @@ const NavModal = ({ setIsModalOpen }) => {
         <div className='flex justify-between'>
           <div className='flex flex-col justify-center'>
             {links.map((link, navmodalIdx) => (
-              <NavLink
+              <a
+                onClick={() => handleClick(link.path)}
+                href={link.path}
                 key={`navmodal-link_${navmodalIdx}`}
-                to={link.path}
                 className='font-normal text-teal py-3 text-lg'
               >
                 {link.text}
-              </NavLink>
+              </a>
             ))}
-            <button className='border-2 border-teal rounded-full py-2 px-10 bg-transparent mb-4'>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className='border-2 border-teal rounded-full py-2 px-10 bg-transparent mb-4'
+            >
               Sign Up
             </button>
-            <button className='py-2 px-10 border-none bg-teal text-white rounded-full'>
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className='py-2 px-10 border-none bg-teal text-white rounded-full'
+            >
               Login
             </button>
           </div>
