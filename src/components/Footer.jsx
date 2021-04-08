@@ -18,7 +18,11 @@ const Footer = () => {
         <a href='https://dribbble.com' target='_blank' rel='noreferrer'>
           <DribbbleIcon className='mr-5' />
         </a>
-        <a href='https://twitter.com' target='_blank' rel='noreferrer'>
+        <a
+          href='https://twitter.com/PrimusTrack'
+          target='_blank'
+          rel='noreferrer'
+        >
           <TwitterIcon className='mr-5' />
         </a>
         <a href='https://youtube.com' target='_blank' rel='noreferrer'>
