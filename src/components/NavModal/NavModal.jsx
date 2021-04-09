@@ -18,6 +18,11 @@ const NavModal = ({ setIsModalOpen }) => {
       path: '#features',
     },
     {
+      text: 'Blog',
+      path: '/blog',
+      page: true,
+    },
+    {
       text: 'Pricing',
       path: '#pricing',
     },
