@@ -6,27 +6,34 @@ import NavModal from './NavModal/NavModal';
 import LogoIcon from './vectors/Logo';
 import Menu from './vectors/Menu';
 
-// const linkClassNames = 'md:hidden sm:hidden px-12 mx-1 font-normal text-teal';
-
 const NavBar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const links = [
     {
       text: 'Home',
-      path: '/',
+      path: '/#',
+      page: false,
     },
     {
       text: 'Features',
       path: '#features',
+      page: false,
+    },
+    {
+      text: 'Blog',
+      path: '/blog',
+      page: true,
     },
     {
       text: 'Pricing',
       path: '#pricing',
+      page: false,
     },
     {
       text: 'FAQ',
       path: '#faq',
+      page: false,
     },
   ];
 
@@ -45,18 +52,39 @@ const NavBar = () => {
 
       <div className='links'>
         {links.map((link, linkIndex) => (
-          <a
-            href={link.path}
-            key={`nav-link_${linkIndex}`}
-            to={link.path}
-            className='hidden lg:inline-block px-12 mx-1 font-normal text-teal'
-            activeClassName='font-bold'
-          >
-            {link.text}
-          </a>
+          <>
+            {link.page === false ? (
+              <a
+                href={link.path}
+                key={`nav-link_${linkIndex}`}
+                to={link.path}
+                className='hidden lg:inline-block px-10 mx-1 font-normal text-teal'
+              >
+                {link.text}
+              </a>
+            ) : (
+              <NavLink
+                className='hidden lg:inline-block px-10 mx-1 font-normal text-teal'
+                activeClassName='font-bold'
+                to={link.path}
+              >
+                {link.text}
+              </NavLink>
+            )}
+          </>
         ))}
-        <button className='hidden lg:inline-block signup'>Sign up</button>
-        <button className='hidden lg:inline-block login'>Login</button>
+        <NavLink
+          to='/'
+          className='hidden lg:inline-block border-2 border-solid border-teal px-10 py-2 focus:outline-none rounded-full text-teal bg-transparent mr-4'
+        >
+          Sign up
+        </NavLink>
+        <NavLink
+          to='/'
+          className='hidden lg:inline-block px-12 py-3 border-none bg-teal rounded-full text-white'
+        >
+          Login
+        </NavLink>
       </div>
     </nav>
   );

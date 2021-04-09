@@ -1,9 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import InstagramIcon from './vectors/Instagram';
-import DribbbleIcon from './vectors/Dribbble';
-import TwitterIcon from './vectors/Twitter';
-import YouTuebIcon from './vectors/YouTube';
+import FacebookIcon from './vectors/FacebookIcon'
+import LinkedInIcon from './vectors/LinkedInIcon'
+import TwitterIcon from './vectors/TwitterIcon'
 
 const Footer = () => {
   return (
@@ -13,24 +12,21 @@ const Footer = () => {
       </p>
       <div className='flex items-center'>
         <a href='https://instagram.com' target='_blank' rel='noreferrer'>
-          <InstagramIcon className='mr-5' />
+          <FacebookIcon className='mr-5' />
         </a>
         <a href='https://dribbble.com' target='_blank' rel='noreferrer'>
-          <DribbbleIcon className='mr-5' />
+          <LinkedInIcon className='mr-5' />
         </a>
         <a
           href='https://twitter.com/PrimusTrack'
           target='_blank'
           rel='noreferrer'
         >
-          <TwitterIcon className='mr-5' />
-        </a>
-        <a href='https://youtube.com' target='_blank' rel='noreferrer'>
-          <YouTuebIcon />
+          <TwitterIcon />
         </a>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

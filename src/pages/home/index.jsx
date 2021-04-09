@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import FAQs from '../components/FAQs/FAQs';
-import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
+import FAQs from '../../components/FAQs/FAQs';
+import NavBar from '../../components/NavBar';
+import Footer from '../../components/Footer';
 
-import Feature1Icon from '../components/vectors/Feature1';
-import Feature2Icon from '../components/vectors/Feature2';
-import Feature3Icon from '../components/vectors/Feature3';
+import Feature1Icon from '../../components/vectors/Feature1';
+import Feature2Icon from '../../components/vectors/Feature2';
+import Feature3Icon from '../../components/vectors/Feature3';
 
 import './Home.scss';
 
@@ -74,25 +74,57 @@ const plans = [
   {
     amount: 0,
     date: 'month',
-    planType: 'Business Class',
-    type: 'For Individual or small teams ',
+    planType: 'Free Class',
+    type: 'For Individual or small teams',
     packages: [
-      'Drag & Drop Builder',
-      '1000’s of Templates',
-      'Blog Support Tools',
-      'Watermarked',
+      '50 tasks',
+      '1 workspaces',
+      '5 projects',
+      '1000 messages',
+      '1000 activity log',
+      '50 file storage (100MB per file)',
+      'Only 10 collaborators can exist in the work space',
+      'Limited Calendar view',
+      'Limited timer feature',
+      'public project Access for all projects',
     ],
   },
   {
-    amount: 99,
+    amount: 8.99,
+    date: 'month',
+    planType: 'Business Class',
+    type: 'For Individual or startup teams',
+    packages: [
+      '1000 tasks',
+      '20 workspaces',
+      '250 projects',
+      'unlimited messages',
+      'unlimited activity log',
+      '10000 file storage (10GB)',
+      'Collaborate with up to 300 teammates',
+      'Full Calendar view',
+      'Full timer feature',
+      'Private/public project Access',
+    ],
+    actions: 'or start 14days trial',
+  },
+  {
+    amount: 18.99,
     date: 'month',
     planType: 'Pro Master',
     type: 'For best oppotunities',
     packages: [
-      'Drag & Drop Builder',
-      '1000’s of Templates',
-      'Blog Support Tools',
-      'Watermarked',
+      'Unlimited tasks',
+      'Unlimited projects',
+      'Unlimited messages',
+      'Unlimited activity log',
+      'Unlimited file storage (100MB)',
+      'Collaborate with up to 1000 teammates',
+      'List view projects',
+      'Board view projects',
+      'Full Calendar view',
+      'Private/public project Access',
+      'Full timer Access',
     ],
     actions: 'or start 14days trial',
   },
@@ -256,9 +288,9 @@ const HomePage = () => {
           entirely and the world's most elevant channels such as Facebook.
         </p>
 
-        <div className='grid gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 mt-20 max-w-2xl mx-auto gap-x-16'>
+        <div className='grid gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 mt-20 max-w-6xl mx-auto gap-x-10'>
           {plans.map((plan, planIdx) => (
-            <div key={`plan-type_${planIdx}`} className='card w-80 h-full'>
+            <div key={`plan-type_${planIdx}`} className='card h-full'>
               <div className='card-header py-14 h-auto flex flex-col items-center justify-center'>
                 <h2>
                   <span className='text-5xl font-bold text-teal2'>
@@ -274,9 +306,11 @@ const HomePage = () => {
               {plan.packages.map((packag, packageIdx) => (
                 <div
                   key={`package_${packageIdx}`}
-                  className='card-body flex flex-col justify-center items-center my-4'
+                  className='card-body flex flex-col justify-center items-center my-2 px-10'
                 >
-                  <p className='text-xl text-black py-3'>{packag}</p>
+                  <p className='text-xl text-black text-center py-2'>
+                    {packag}
+                  </p>
                 </div>
               ))}
               <button className='px-9 py-2 border-none bg-teal2 rounded-full text-white my-4 mb-8 flex justify-center items-center mx-auto'>

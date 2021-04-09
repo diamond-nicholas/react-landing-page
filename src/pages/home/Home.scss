@@ -1,25 +1,9 @@
 .HomePage {
   .header {
-    background: url('../assests/images/22222.png');
+    background: url('../../assests/images/22222.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-  }
-
-  .signup {
-    border: 1px solid #274b89;
-    border-radius: 90px;
-    padding: 0.57rem 2.5rem;
-    background: transparent;
-    margin-right: 1rem;
-  }
-
-  .login {
-    padding: 0.57rem 3rem;
-    border: none;
-    background: #274b89;
-    border-radius: 90px;
-    color: white;
   }
 
   .card {
