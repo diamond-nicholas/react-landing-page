@@ -24,7 +24,6 @@ const NavModal = ({ setIsModalOpen }) => {
     {
       text: 'Blog',
       path: '/blog',
-      page: true,
     },
     {
       text: 'FAQ',
