@@ -22,10 +22,6 @@ const NavModal = ({ setIsModalOpen }) => {
       path: '#pricing',
     },
     {
-      text: 'Blog',
-      path: '/blog',
-    },
-    {
       text: 'FAQ',
       path: '#faq',
     },
