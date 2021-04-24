@@ -1,74 +1,74 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import FAQs from '../../components/FAQs/FAQs';
-import NavBar from '../../components/NavBar';
-import Footer from '../../components/Footer';
+import FAQs from '../../components/FAQs/FAQs'
+import NavBar from '../../components/NavBar'
+import Footer from '../../components/Footer'
 
-import Feature1Icon from '../../components/vectors/Feature1';
-import Feature2Icon from '../../components/vectors/Feature2';
-import Feature3Icon from '../../components/vectors/Feature3';
+import Feature1Icon from '../../components/vectors/Feature1'
+import Feature2Icon from '../../components/vectors/Feature2'
+import Feature3Icon from '../../components/vectors/Feature3'
 
-import './Home.scss';
+import './Home.scss'
 
 const features = [
   {
     icon: <Feature1Icon />,
     title: 'Projects creation',
     description:
-      'An awesome feature that allow you to create projects within a workspace',
+      'An awesome feature that allow you to create projects within a workspace'
   },
   {
     icon: <Feature2Icon />,
     title: 'Task creation',
     description:
-      'You can create various task under a project and add a deadline',
+      'You can create various task under a project and add a deadline'
   },
   {
     icon: <Feature3Icon />,
     title: 'Time tracking',
     description:
-      'You can track the productivity of your team and how time they spent on a task',
-  },
-];
+      'You can track the productivity of your team and how time they spent on a task'
+  }
+]
 
 const benefits = [
   {
     icon: <Feature1Icon />,
     title: 'Smooth Workflow',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
   },
   {
     icon: <Feature1Icon />,
     title: 'Flexibility',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
   },
   {
     icon: <Feature1Icon />,
     title: 'User Friendly',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
   },
   {
     icon: <Feature1Icon />,
     title: 'Multiple Layouts',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
   },
   {
     icon: <Feature1Icon />,
     title: 'Better Components',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
   },
   {
     icon: <Feature1Icon />,
     title: 'Well Organized',
     content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.',
-  },
-];
+      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+  }
+]
 
 const plans = [
   {
@@ -86,8 +86,8 @@ const plans = [
       'Only 10 collaborators can exist in the work space',
       'Limited Calendar view',
       'Limited timer feature',
-      'public project Access for all projects',
-    ],
+      'public project Access for all projects'
+    ]
   },
   {
     amount: 8.99,
@@ -104,9 +104,9 @@ const plans = [
       'Collaborate with up to 300 teammates',
       'Full Calendar view',
       'Full timer feature',
-      'Private/public project Access',
+      'Private/public project Access'
     ],
-    actions: 'or start 14days trial',
+    actions: 'or start 14days trial'
   },
   {
     amount: 18.99,
@@ -124,11 +124,11 @@ const plans = [
       'Board view projects',
       'Full Calendar view',
       'Private/public project Access',
-      'Full timer Access',
+      'Full timer Access'
     ],
-    actions: 'or start 14days trial',
-  },
-];
+    actions: 'or start 14days trial'
+  }
+]
 
 const HomePage = () => {
   const [faqs, setFaqs] = useState([
@@ -136,35 +136,35 @@ const HomePage = () => {
       question: 'App installation failed, how to update system information?',
       answer:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
-      open: false,
+      open: false
     },
     {
       question: 'App response taking time, how to improve?',
       answer:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
-      open: false,
+      open: false
     },
     {
       question: 'New update fixed all bug and issues',
       answer:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
-      open: false,
-    },
-  ]);
+      open: false
+    }
+  ])
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = index => {
     setFaqs(
       faqs.map((faq, i) => {
         if (i === index) {
-          faq.open = !faq.open;
+          faq.open = !faq.open
         } else {
-          faq.open = false;
+          faq.open = false
         }
 
-        return faq;
+        return faq
       })
-    );
-  };
+    )
+  }
 
   return (
     <div className='HomePage'>
@@ -395,7 +395,7 @@ const HomePage = () => {
       </section>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
