@@ -1,17 +1,17 @@
 export const formatDate = text => {
   const monthNames = [
-    'JANUARY',
-    'FEBRUARY',
-    'MARCH',
-    'APRIL',
-    'MAY',
-    'JUNE',
-    'JULY',
-    'AUGUST',
-    'SEPTEMBER',
-    'OCTOBER',
-    'NOVEMBER',
-    'DECEMBER'
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'June',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
   ]
   const formatted = new Date(text)
 
