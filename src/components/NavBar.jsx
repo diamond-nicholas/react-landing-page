@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
-import NavModal from './NavModal/NavModal';
+import NavModal from './NavModal/NavModal'
 
-import LogoIcon from './vectors/Logo';
-import Menu from './vectors/Menu';
+import LogoIcon from './vectors/Logo'
+import Menu from './vectors/Menu'
 
 const NavBar = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   const links = [
     {
       text: 'Home',
       path: '/#',
-      page: false,
+      page: false
     },
     {
       text: 'Features',
       path: '#features',
-      page: false,
+      page: false
     },
     {
       text: 'Blog',
       path: '/blog',
-      page: true,
+      page: true
     },
     {
       text: 'Pricing',
       path: '#pricing',
-      page: false,
+      page: false
     },
     {
       text: 'FAQ',
       path: '#faq',
-      page: false,
-    },
-  ];
+      page: false
+    }
+  ]
 
   return (
     <nav className='px-10 xs:px-5 flex h-40 justify-between items-center lg:px-48'>
@@ -87,7 +87,7 @@ const NavBar = () => {
         </NavLink>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

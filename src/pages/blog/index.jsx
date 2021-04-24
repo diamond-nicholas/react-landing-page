@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import Loader from '../../components/Loader'
 import { formatDate } from '../../utils/format-date'
+import { Link } from 'react-router-dom'
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([])
@@ -70,9 +71,11 @@ const BlogPage = () => {
               <p className='text-gray6 font-medium text-xs mt-8'>
                 {formatDate(post.created_at)} - 10mins read
               </p>
-              <h2 className='font-bold text-teal2 text-4xl leading-tight my-2'>
-                {post.title}
-              </h2>
+              <Link to={`/blog/${post._id}`}>
+                <h2 className='font-bold text-teal2 text-4xl leading-tight my-2'>
+                  {post.title}
+                </h2>
+              </Link>
               <p className='text-gray7 text-base max-w-xs'>
                 {post.blog_post.slice(0, 100)}
               </p>
