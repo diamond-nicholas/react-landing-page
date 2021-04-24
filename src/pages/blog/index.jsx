@@ -4,6 +4,7 @@ import axios from 'axios'
 import NavBar from '../../components/NavBar'
 import Footer from '../../components/Footer'
 import Loader from '../../components/Loader'
+import { formatDate } from '../../utils/format-date'
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([])
@@ -39,7 +40,7 @@ const BlogPage = () => {
             The Blog
           </h1>
           <div className='xs:flex xs:flex-col lg:flex lg:flex-row mt-10'>
-            <div className='h-96 lg:w-4/6 bg-gray5' />
+            <di className='h-96 lg:w-4/6 bg-gray5' />
             <div className='m-5'>
               <p className='text-gray6 font-medium text-xl'>
                 March 31, 2021 - 10mins read
@@ -63,9 +64,11 @@ const BlogPage = () => {
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 my-20'>
           {posts.map(post => (
             <div key={post._id}>
-              <div className='h-64 w-6/6 bg-gray5' />
+              <div className='h-64 w-6/6 bg-gray5'>
+                <img src={post.image} alt='_' />
+              </div>
               <p className='text-gray6 font-medium text-xs mt-8'>
-                March 31, 2021 - 10mins read
+                {formatDate(post.created_at)} - 10mins read
               </p>
               <h2 className='font-bold text-teal2 text-4xl leading-tight my-2'>
                 {post.title}
