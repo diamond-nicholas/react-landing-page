@@ -11,10 +11,10 @@ const Footer = () => {
         &copy; {new Date().getFullYear()} Primus Track. All rights reserved
       </p>
       <div className='flex items-center'>
-        <a href='https://instagram.com' target='_blank' rel='noreferrer'>
+        <a href='https://www.facebook.com/PrimusTrack-108068561390583' target='_blank' rel='noreferrer'>
           <FacebookIcon className='mr-5' />
         </a>
-        <a href='https://dribbble.com' target='_blank' rel='noreferrer'>
+        <a href='https://www.linkedin.com/company/primustrack' target='_blank' rel='noreferrer'>
           <LinkedInIcon className='mr-5' />
         </a>
         <a
