@@ -55,7 +55,7 @@ const ShowPost = ({ match }) => {
             {formatDate(blogPost.created_at)} - 10mins read
           </p>
           <p className='text-gray6 font-medium text-xl'>
-            Written by: Babatunde Fatai
+            Written by: {blogPost.Author ? blogPost.Author[0].name : '123'}
           </p>
         </div>
         <p>{blogPost.blog_post}</p>
