@@ -37,9 +37,23 @@ const BlogPage = () => {
       <header className='h-screen'>
         <NavBar />
         <div className='xs:px-5 px-10 lg:px-48'>
-          <h1 className='font-bold xs:text-5xl lg:text-8xl text-teal2 mt-8 lg:mt-16 mb-28'>
-            The Blog
-          </h1>
+          <div className='flex justify-between items-center'>
+            <h1 className='font-bold xs:text-5xl lg:text-8xl text-teal2 mt-8 lg:mt-16 mb-28'>
+              The Blog
+            </h1>
+            <select className='bg-transparent focus:outline-none'>
+              <option disabled value='Category'>
+                Category
+              </option>
+              <option value='sport'>Sport</option>
+              <option value='communications'>Communications</option>
+              <option value='tech'>Tech</option>
+              <option value='crypto'>Crypto</option>
+              <option value='education'>Education</option>
+              <option value='food'>Food</option>
+              <option value='agriculture'>Agriculture</option>
+            </select>
+          </div>
           <div className='xs:flex xs:flex-col lg:flex lg:flex-row mt-10'>
             <di className='h-96 lg:w-4/6 bg-gray5' />
             <div className='m-5'>
@@ -71,7 +85,14 @@ const BlogPage = () => {
               <p className='text-gray6 font-medium text-xs mt-8'>
                 {formatDate(post.created_at)} - 10mins read
               </p>
-              <Link to={`/blog/${post._id}`}>
+              <Link
+                to={{
+                  pathname: `/blog/${post._id}`,
+                  state: {
+                    posts
+                  }
+                }}
+              >
                 <h2 className='font-bold text-teal2 text-4xl leading-tight my-2'>
                   {post.title}
                 </h2>

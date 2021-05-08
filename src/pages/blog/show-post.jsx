@@ -1,13 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import Loader from '../../components/Loader'
+import axios from 'axios'
 
 import NavBar from '../../components/NavBar'
 import { formatDate } from '../../utils/format-date'
+import Footer from '../../components/Footer'
+import Loader from '../../components/Loader'
 
-const ShowPost = ({ match }) => {
+const ShowPost = ({ match, location }) => {
   const { id } = match.params
+  const { posts } = location.state
 
   const [blogPost, setBlogPost] = useState({})
   const [error, setError] = useState('')
@@ -31,8 +33,6 @@ const ShowPost = ({ match }) => {
     getABlogPost()
   }, [])
 
-  console.log({ blogPost, id })
-
   if (error) return <h1>{error}</h1>
 
   return (
@@ -45,7 +45,7 @@ const ShowPost = ({ match }) => {
         </h1>
         <div className='h-96 lg:w-full bg-gray5 object-cover'>
           <img
-            className='object-cover max-w-full'
+            className='object-cover max-w-full w-full h-full'
             src={blogPost.image}
             alt='_'
           />
@@ -144,6 +144,7 @@ const ShowPost = ({ match }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
