@@ -61,87 +61,31 @@ const ShowPost = ({ match, location }) => {
         <p>{blogPost.blog_post}</p>
       </div>
       <div className='lg:px-48 mt-28'>
+        {(loading || posts.length === 0) && <Loader />}
         <h1 className='text-4xl text-gray8 font-medium'>Check other post</h1>
         <div className='grid md:grid-cols-2 lg:grid-cols-5 gap-x-10 gap-y-10 my-20'>
-          <div>
-            <div className='h-48 w-full bg-gray5'>
-              {/* <img src={post.image} alt='_' /> */}
-            </div>
-            <p className='text-gray6 font-medium text-xs mt-8'>
-              March 31, 2021 - 10mins read
-            </p>
-            <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
-              How to effectively manage your team.
-            </h2>
-            <p className='text-gray7 text-base max-w-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div>
-            <div className='h-48 w-full bg-gray5'>
-              {/* <img src={post.image} alt='_' /> */}
-            </div>
-            <p className='text-gray6 font-medium text-xs mt-8'>
-              March 31, 2021 - 10mins read
-            </p>
-            <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
-              How to effectively manage your team.
-            </h2>
-            <p className='text-gray7 text-base max-w-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div>
-            <div className='h-48 w-full bg-gray5'>
-              {/* <img src={post.image} alt='_' /> */}
-            </div>
-            <p className='text-gray6 font-medium text-xs mt-8'>
-              March 31, 2021 - 10mins read
-            </p>
-            <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
-              How to effectively manage your team.
-            </h2>
-            <p className='text-gray7 text-base max-w-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div>
-            <div className='h-48 w-full bg-gray5'>
-              {/* <img src={post.image} alt='_' /> */}
-            </div>
-            <p className='text-gray6 font-medium text-xs mt-8'>
-              March 31, 2021 - 10mins read
-            </p>
-            <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
-              How to effectively manage your team.
-            </h2>
-            <p className='text-gray7 text-base max-w-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div>
-            <div className='h-48 w-full bg-gray5'>
-              {/* <img src={post.image} alt='_' /> */}
-            </div>
-            <p className='text-gray6 font-medium text-xs mt-8'>
-              March 31, 2021 - 10mins read
-            </p>
-            <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
-              How to effectively manage your team.
-            </h2>
-            <p className='text-gray7 text-base max-w-xs'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
+          {posts
+            .slice(1, 6)
+            .map(({ _id, created_at, title, blog_post, image }) => (
+              <div key={_id}>
+                <div className='h-48 w-full bg-gray5'>
+                  <img
+                    src={image}
+                    alt='_'
+                    className='w-full h-full max-w-full object-cover'
+                  />
+                </div>
+                <p className='text-gray6 font-medium text-xs mt-8'>
+                  {formatDate(created_at)} - 10mins read
+                </p>
+                <h2 className='font-bold text-teal2 text-2xl leading-tight my-2'>
+                  {title}
+                </h2>
+                <p className='text-gray7 text-base max-w-xs'>
+                  {blog_post.slice(0, 100)}
+                </p>
+              </div>
+            ))}
         </div>
       </div>
       <Footer />
