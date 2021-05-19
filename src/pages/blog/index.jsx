@@ -11,6 +11,7 @@ const BlogPage = () => {
   const [posts, setPosts] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [featuredPost, setFeaturedPost] = useState([])
 
   const getAllBlogPosts = async () => {
     try {
@@ -26,8 +27,26 @@ const BlogPage = () => {
     }
   }
 
+  const getFeaturedBlogPost = async () => {
+    try {
+      const response = await axios.get(
+        'https://primustrackapi.herokuapp.com/api/v1/all/blog-post?limit=1'
+      )
+      setLoading(true)
+      setFeaturedPost(response.data.data)
+    } catch (error) {
+      setError(
+        error.message,
+        'Opps, something went wrong, please try again!!!!!'
+      )
+    } finally {
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     getAllBlogPosts()
+    getFeaturedBlogPost()
   }, [])
 
   if (error) return <h1>{error}</h1>
@@ -54,33 +73,44 @@ const BlogPage = () => {
               <option value='agriculture'>Agriculture</option>
             </select>
           </div>
-          <div className='xs:flex xs:flex-col lg:flex lg:flex-row mt-10'>
-            <di className='h-96 lg:w-4/6 bg-gray5' />
-            <div className='m-5'>
-              <p className='text-gray6 font-medium text-xl'>
-                March 31, 2021 - 10mins read
-              </p>
-              <h2 className='text-teal2 lg:font-bold lg:text-7xl leading-tight my-4'>
-                How to effectively manage your team.
-              </h2>
-              <p className='text-gray7 text-3xl max-w-xl'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit.
-              </p>
+          {featuredPost.map(({ _id, title, image, blog_post, created_at }) => (
+            <div
+              key={_id}
+              className='xs:flex xs:flex-col lg:flex lg:flex-row mt-10'
+            >
+              <di className='h-96 lg:w-4/6 bg-gray5'>
+                <img src={image} alt='' className='w-full h-full max-w-full' />
+              </di>
+
+              <div className='lg:m-5 md:ml-0'>
+                <p className='text-gray6 font-medium text-xl'>
+                  {formatDate(created_at)} - 10mins read
+                </p>
+                <h2 className='text-teal2 lg:font-bold lg:text-7xl leading-tight my-4'>
+                  {title}
+                </h2>
+                <p className='text-gray7 text-3xl max-w-xl'>
+                  {blog_post.slice(0, 100)}
+                </p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </header>
-      <div className='xs:px-5 px-10 lg:px-48 mt-20'>
+      <div className='xs:px-5 px-10 lg:px-48 md:mt-60 mt-20'>
         <h2 className='text-gray8 xs:text-3xl lg:text-5xl font-medium'>
           Older Posts
         </h2>
         {(loading || posts.length === 0) && <Loader />}
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 my-20'>
-          {posts.map(post => (
+          {posts.slice(1, posts.length - 1).map(post => (
             <div key={post._id}>
               <div className='h-64 w-6/6 bg-gray5'>
-                <img src={post.image} alt='_' />
+                <img
+                  src={post.image}
+                  alt='_'
+                  className='w-full h-full max-w-full'
+                />
               </div>
               <p className='text-gray6 font-medium text-xs mt-8'>
                 {formatDate(post.created_at)} - 10mins read
