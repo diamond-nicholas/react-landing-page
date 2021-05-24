@@ -13,21 +13,21 @@ import './Home.scss'
 const features = [
   {
     icon: <Feature1Icon />,
-    title: 'Projects creation',
+    title: 'Create Projects',
     description:
-      'An awesome feature that allow you to create projects within a workspace'
+      'Create projects, assign a team lead, add collaborators, attachments, and leave comments. For projects that are on a time crunch, you can set an appropriate priority level.'
   },
   {
     icon: <Feature2Icon />,
-    title: 'Task creation',
+    title: 'Create Tasks',
     description:
-      'You can create various task under a project and add a deadline'
+      'Tasks are sub-components of projects. Just like projects, you can assign a team lead, add collaborators and set a priority level for a specific task.'
   },
   {
     icon: <Feature3Icon />,
-    title: 'Time tracking',
+    title: 'Minimal Dashboard',
     description:
-      'You can track the productivity of your team and how time they spent on a task'
+      'Get a quick overview of how you’re keeping up with your projects and tasks via our simple-to-use and clutter-free dashboard.'
   }
 ]
 
@@ -172,8 +172,10 @@ const HomePage = () => {
         <NavBar />
         <div className='grid lg:grid-cols-2 px-10 xs:px-5 lg:px-48 mt-12'>
           <h2 className='leading-tight xs:text-3xl md:text-5xl md:leading-tight text-5xl mb-8 lg:text-7xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
-            Ultra-modern system of essential team collaboration
+            Build Excellent Stuff, All Without the Clutter
           </h2>
+          {/* <p>
+            We know building great stuff requires focus and clarity. PrimusTrack aids you to do just that in a simple-to-use and cost-effective way.</p> */}
           <img src='/images/33333.png' alt='' className='lg:block' />
         </div>
       </header>
@@ -183,11 +185,10 @@ const HomePage = () => {
           <img src='/images/11111.png' alt='' className='block mx-auto' />
           <div className='features'>
             <h2 className='text-4xl text-gray1 max-w-sm font-bold leading-tight'>
-              Awesome App Features
+              Features
             </h2>
             <p className='max-w-md text-gray2 text-xl mt-2'>
-              Increase productivity with a simple to-do app. app for managing
-              your personal budgets.
+              PrimusTrack is a simple but powerful tool that offers you the necessary features to achieve effective collaboration.
             </p>
 
             {features.map((feature, featureIdx) => (
@@ -236,17 +237,15 @@ const HomePage = () => {
           <img src='/images/Logos.jpg' alt='' className='block mx-auto' />
           <div className='flex flex-col md:mt-20 lg:mt-28'>
             <h2 className='text-4xl text-gray1 font-bold lg:max-w-sm leading-tight'>
-              Designed & built by the latest code integration
+              Your Swiss-Army Knife
             </h2>
             <p className='text-xl text-gray2 mt-5 max-w-lg'>
-              Increase productivity with a simple to-do app. app for managing
-              your personal projects. Increase productivity with a simple to-do
-              app. app for managing your personal projects.
+              Perform all your necessary team activities without distractions. We integrate seamlessly with your favourite office tools. Yes! We also support your favourite G Suite apps.
             </p>
           </div>
         </div>
 
-        <div className='px-10 xs:px-5 lg:px-48 mb-11 mt-32'>
+        {/* <div className='px-10 xs:px-5 lg:px-48 mb-11 mt-32'>
           <h2 className='text-center xs:font-semibold font-bold text-4xl max-w-md mx-auto leading-tight text-black'>
             Why you should choose our app
           </h2>
@@ -273,7 +272,7 @@ const HomePage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       <section
@@ -281,11 +280,10 @@ const HomePage = () => {
         className='px-10 xs:px-5 lg:px-48 mt-32 mb-11 border-b-2 border-gray-200 pb-36'
       >
         <h2 className='text-center font-bold text-4xl text-black'>
-          Get the best with premium
+          Access the full power of Primus Track with Premium
         </h2>
         <p className='lg:text-center text-gray1 text-xl max-w-3xl mx-auto mt-7'>
-          The rise of mobile devices transforms the way we consume information
-          entirely and the world's most elevant channels such as Facebook.
+          Billed monthly or annually. Cancel anytime.
         </p>
 
         <div className='grid gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 mt-20 max-w-6xl mx-auto gap-x-10'>
@@ -327,7 +325,7 @@ const HomePage = () => {
           ))}
         </div>
       </section>
-
+{/* 
       <section
         id='testimonials'
         className='lg:pr-48 grid lg:grid-cols-2 mt-20 xs:mt-14 lg:mt-32'
@@ -365,7 +363,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id='faq' className='mt-32 max-w-4xl mx-auto mb-11 xs:px-5 px-10'>
         <h2 className='text-center text-4xl font-bold text-black'>
