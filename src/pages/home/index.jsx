@@ -31,44 +31,44 @@ const features = [
   }
 ]
 
-const benefits = [
-  {
-    icon: <Feature1Icon />,
-    title: 'Smooth Workflow',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  },
-  {
-    icon: <Feature1Icon />,
-    title: 'Flexibility',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  },
-  {
-    icon: <Feature1Icon />,
-    title: 'User Friendly',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  },
-  {
-    icon: <Feature1Icon />,
-    title: 'Multiple Layouts',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  },
-  {
-    icon: <Feature1Icon />,
-    title: 'Better Components',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  },
-  {
-    icon: <Feature1Icon />,
-    title: 'Well Organized',
-    content:
-      'Increase productivity with a simple to-do app. app for managing your personal budgets.'
-  }
-]
+// const benefits = [
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'Smooth Workflow',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   },
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'Flexibility',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   },
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'User Friendly',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   },
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'Multiple Layouts',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   },
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'Better Components',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   },
+//   {
+//     icon: <Feature1Icon />,
+//     title: 'Well Organized',
+//     content:
+//       'Increase productivity with a simple to-do app. app for managing your personal budgets.'
+//   }
+// ]
 
 const plans = [
   {
