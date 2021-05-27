@@ -171,11 +171,17 @@ const HomePage = () => {
       <header className='h-screen header'>
         <NavBar />
         <div className='grid lg:grid-cols-2 px-10 xs:px-5 lg:px-48 mt-12'>
-          <h2 className='leading-tight xs:text-3xl md:text-5xl md:leading-tight text-5xl mb-8 lg:text-7xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
+          <div>
+          <h2 className='leading-tight xs:text-3xl md:text-5xl md:leading-tight text-5xl mb-8 lg:text-5xl font-bold text-teal2 lg:max-w-lg lg:leading-tight'>
             Build Excellent Stuff, All Without the Clutter
           </h2>
-          {/* <p>
-            We know building great stuff requires focus and clarity. PrimusTrack aids you to do just that in a simple-to-use and cost-effective way.</p> */}
+          <p className='leading-tight font-bold text-teal2'>
+            We know building great stuff requires focus and clarity. PrimusTrack aids you to do just that in a simple-to-use and cost-effective way.</p>
+            <button className='px-9 py-2 border-none bg-teal2 rounded-full text-white my-4 mb-8'>
+                Start free trial
+              </button>
+          </div>
+          
           <img src='/images/33333.png' alt='' className='lg:block' />
         </div>
       </header>
