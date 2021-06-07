@@ -17,7 +17,7 @@ const NavBar = () => {
     },
     {
       text: 'Features',
-      path: '/#features',
+      path: '#features',
       page: false
     },
     {
@@ -27,12 +27,12 @@ const NavBar = () => {
     },
     {
       text: 'Pricing',
-      path: '/#pricing',
+      path: '#pricing',
       page: false
     },
     {
       text: 'FAQ',
-      path: '/#faq',
+      path: '#faq',
       page: false
     }
   ]
