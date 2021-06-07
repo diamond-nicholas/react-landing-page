@@ -12,18 +12,21 @@ import './Home.scss'
 
 const features = [
   {
+    image: <img src='/images/primus_1.jpeg' />,
     icon: <Feature1Icon />,
     title: 'Create Projects',
     description:
       'Create projects, assign a team lead, add collaborators, attachments, and leave comments. For projects that are on a time crunch, you can set an appropriate priority level.'
   },
   {
+    image: <img src='/images/primus2.jpeg' />,
     icon: <Feature2Icon />,
     title: 'Create Tasks',
     description:
       'Tasks are sub-components of projects. Just like projects, you can assign a team lead, add collaborators and set a priority level for a specific task.'
   },
   {
+    image: <img src='/images/primus_3.jpeg' />,
     icon: <Feature3Icon />,
     title: 'Minimal Dashboard',
     description:
@@ -74,80 +77,95 @@ const plans = [
   {
     amount: 0,
     date: 'month',
-    planType: 'Free Class',
-    type: 'For Individual or small teams',
+    planType: 'Free',
+    type: '',
     packages: [
-      '50 tasks',
-      '1 workspaces',
+      '1 workspace',
       '5 projects',
-      '1000 messages',
+      '50 tasks',
+      '1k messages',
       '1000 activity log',
-      '50 file storage (100MB per file)',
-      'Only 10 collaborators can exist in the work space',
-      'Limited Calendar view',
-      'Limited timer feature',
-      'public project Access for all projects'
+      '50 file storage',
+      '10 collaborators',
+      'Limited Calendar and Calendar feature',
     ]
   },
   {
     amount: 8.99,
     date: 'month',
-    planType: 'Business Class',
-    type: 'For Individual or startup teams',
+    planType: 'Basic',
+    type: 'For Small Teams',
     packages: [
-      '1000 tasks',
       '20 workspaces',
       '250 projects',
+      '1k tasks',
       'unlimited messages',
       'unlimited activity log',
-      '10000 file storage (10GB)',
+      '10GB file storage',
       'Collaborate with up to 300 teammates',
-      'Full Calendar view',
-      'Full timer feature',
-      'Private/public project Access'
+      'Full Calendar and timer feature',
+      'Private/public project access control'
     ],
-    actions: 'or start 14days trial'
+    // actions: 'or start 14days trial'
   },
   {
     amount: 18.99,
     date: 'month',
-    planType: 'Pro Master',
-    type: 'For best oppotunities',
+    planType: 'Premium',
+    type: 'For Large Teams',
     packages: [
       'Unlimited tasks',
       'Unlimited projects',
       'Unlimited messages',
       'Unlimited activity log',
       'Unlimited file storage (100MB)',
-      'Collaborate with up to 1000 teammates',
+      'Collaborate with up to 1k teammates',
       'List view projects',
       'Board view projects',
       'Full Calendar view',
       'Private/public project Access',
       'Full timer Access'
     ],
-    actions: 'or start 14days trial'
+    // actions: 'or start 14days trial'
   }
 ]
 
 const HomePage = () => {
   const [faqs, setFaqs] = useState([
     {
-      question: 'App installation failed, how to update system information?',
+      question: 'What is PrimusTrack?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
+        "Primus Track is a minimal, easy-to-use project management tool that helps you to achieve your best work without being distracted. It simply provides the necessary features you need without overwhelming you with gimmicky features",
       open: false
     },
     {
-      question: 'App response taking time, how to improve?',
+      question: 'Does Primus Track integrate with other products?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
+        "Yes. Primus Track integrates well with other third-party apps you might need. At the moment, we offer full support for Google Meet and Slack.",
       open: false
     },
     {
-      question: 'New update fixed all bug and issues',
+      question: 'How does the Free pricing plan work?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur accusantium voluptatum at qui nobis quasi temporibus nulla exercitationem id, iusto animi nostrum distinctio dolorem enim quibusdam dolorum. Id, fugiat tempora!',
+        "The Free tier of Primus Track offers you limited features needed for project management and team collaboration. If the Free pricing plan isn’t enough for your needs, you can opt-in for our Basic or Premium options.",
+      open: false
+    },
+    {
+      question: 'Do I need the Basic and Premium paid plans?',
+      answer:
+        'Maybe. Primus Track offers three pricing plans which are billed annually, based on a team’s size. ‘Free’ is geared towards startups, ‘Basic’ towards small teams, and ‘Premium’ for large teams. Depending on your team size and the size of projects you want to manage, choose which of the three plans would be sufficient. We recommend the Basic plan for 1st time customers.',
+      open: false
+    },
+    {
+      question: 'Can I switch plans later?',
+      answer:
+        'Sure, why not? Primus Track is a pay-as-you-go tool to help you pay for the right plan based on your needs. Depending on the scale of your projects, you can either choose to downgrade/upgrade.',
+      open: false
+    },
+    {
+      question: 'What happens when my subscription expires?',
+      answer:
+        'Our premium subscription is billed annually. You will receive a renewal notification via your email 7 days before your subscription expires. If you do not choose to renew, or if your subscription expires, your account would be downgraded to our Free limited version.',
       open: false
     }
   ])
@@ -187,10 +205,9 @@ const HomePage = () => {
       </header>
 
       <section id='features'>
-        <div className='grid lg:grid-cols-2 xs:px-5 px-10 lg:px-48 mt-16 mb-11'>
-          <img src='/images/11111.png' alt='' className='block mx-auto' />
+        <div className='xs:px-5 px-10 lg:px-20 mt-16 mb-11'>
           <div className='features'>
-            <h2 className='text-4xl text-gray1 max-w-sm font-bold leading-tight'>
+            <h2 className='text-4xl text-gray1 max-w-sm font-bold leading-tight ml-100'>
               Features
             </h2>
             <p className='max-w-md text-gray2 text-xl mt-2'>
@@ -202,6 +219,9 @@ const HomePage = () => {
                 key={`feature_${featureIdx}`}
                 className='lg:flex md:flex xs:grid-cols-1 xs:grid xs:place-items-center mt-16'
               >
+                <div className='w-1/4 h-1/4 m-20'>
+                  {feature.image}
+                </div>
                 <div className='rounded-full h-20 w-20 bg-gray3 xs:mb-5 flex items-center justify-center'>
                   {feature.icon}
                 </div>
@@ -289,7 +309,7 @@ const HomePage = () => {
           Access the full power of Primus Track with Premium
         </h2>
         <p className='lg:text-center text-gray1 text-xl max-w-3xl mx-auto mt-7'>
-          Billed monthly or annually. Cancel anytime.
+          Billed annually, Cancel anytime.
         </p>
 
         <div className='grid gap-y-20 place-content-center sm:grid-cols-1 sm:place-items-center sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3 mt-20 max-w-6xl mx-auto gap-x-10'>
@@ -379,7 +399,7 @@ const HomePage = () => {
           The rise of mobile devices transforms the way we consume information
           entirely and the world's most elevant channels such as Facebook.
         </p>
-        <div className='flex flex-col bg-orange1 py-14 xs:px-5 px-10 mt-14'>
+        {/* <div className='flex flex-col bg-orange1 py-14 xs:px-5 px-10 mt-14'>
           <h2 className='text-xl xs:text-lg font-bold text-black mb-8'>
             How to create a workspace?
           </h2>
@@ -390,7 +410,7 @@ const HomePage = () => {
             entirely and the world's most elevant channels such as Facebook. The
             rise of mobile devices transforms the way
           </p>
-        </div>
+        </div> */}
         <div className='faqs w-full py-4'>
           {faqs.map((faq, i) => (
             <FAQs faq={faq} index={i} toggleFAQ={toggleFAQ} />
