@@ -345,7 +345,7 @@ const HomePage = () => {
                   planIdx === 1 ? 'mb-6' : planIdx === 0 ? 'mb-0' : ''
                 }`}
               >
-                {plan.actions}
+                {/* {plan.actions} */}
               </button>
             </div>
           ))}
