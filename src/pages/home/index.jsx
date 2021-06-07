@@ -12,21 +12,21 @@ import './Home.scss'
 
 const features = [
   {
-    image: <img src='/images/primus_1.jpeg' />,
+    image: <img src='/images/primus_1.jpeg' alt='logo'/>,
     icon: <Feature1Icon />,
     title: 'Create Projects',
     description:
       'Create projects, assign a team lead, add collaborators, attachments, and leave comments. For projects that are on a time crunch, you can set an appropriate priority level.'
   },
   {
-    image: <img src='/images/primus2.jpeg' />,
+    image: <img src='/images/primus2.jpeg' alt=''/>,
     icon: <Feature2Icon />,
     title: 'Create Tasks',
     description:
       'Tasks are sub-components of projects. Just like projects, you can assign a team lead, add collaborators and set a priority level for a specific task.'
   },
   {
-    image: <img src='/images/primus_3.jpeg' />,
+    image: <img src='/images/primus_3.jpeg' alt=''/>,
     icon: <Feature3Icon />,
     title: 'Minimal Dashboard',
     description:
