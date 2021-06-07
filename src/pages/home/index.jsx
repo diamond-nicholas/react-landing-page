@@ -106,7 +106,7 @@ const plans = [
       'Full Calendar and timer feature',
       'Private/public project access control'
     ],
-    // actions: 'or start 14days trial'
+    actions: 'or start 14days trial'
   },
   {
     amount: 18.99,
@@ -126,7 +126,7 @@ const plans = [
       'Private/public project Access',
       'Full timer Access'
     ],
-    // actions: 'or start 14days trial'
+    actions: 'or start 14days trial'
   }
 ]
 
